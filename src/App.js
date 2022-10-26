@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+// import data from './services';
+import usePlats from './services/plats';
 
 function App() {
+
+  const plats = usePlats()
+  console.log(plats)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">    
+      <h1>AVEC</h1>
+      <div className='aliments-wrapper'>
+        {plats.map((plat) => (
+          <div className='card' key={plat._id}>
+            <h3>{plat.nom}</h3>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
