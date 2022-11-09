@@ -1,24 +1,23 @@
+import { Routes, Route } from "react-router-dom"
 import './App.css';
-// import data from './services';
-import usePlats from './services/plats';
+import Home from "./pages/Home"
+import Header from "./layouts/Header"
+import Footer from "./layouts/Footer"
 
-function App() {
-
-  const plats = usePlats()
-  console.log(plats)
-
-  return (
-    <div className="App">    
-      <h1>AVEC</h1>
-      <div className='aliments-wrapper'>
-        {plats.map((plat) => (
-          <div className='card' key={plat._id}>
-            <h3>{plat.nom}</h3>
-          </div>
-        ))}
-      </div>
+const App = () => {
+  return(
+    <div>
+        <Header/>
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup/>} />
+          {/* <Route path="/plat/:id" component={PlatPage} />
+          <Route path="/contact" component={Contact} /> */}
+        </Routes>
+        <Footer/>
     </div>
-  );
+)
 }
 
 export default App;

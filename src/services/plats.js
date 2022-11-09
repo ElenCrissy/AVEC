@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 
+// Exemple de params
 // /**
 //  * Returns data about daily activities bar chart
 //  * @param { Number } userId

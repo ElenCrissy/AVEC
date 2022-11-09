@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-const useAliments = () => {
+const useAliments = (platId) => {
     const [aliments, setAliments] = useState([])
 
     useEffect( () => {
@@ -12,7 +12,7 @@ const useAliments = () => {
         }
         fetchData().catch(err => console.log(err))
 
-    }, [])
+    }, [platId])
 
     return aliments
 }
