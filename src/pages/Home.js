@@ -33,7 +33,7 @@ const Home = () => {
     <HomeWrapper className="App">
       <CardWrapper className='card-wrapper'>
         {plats.map((plat) => (
-          <Card href={`/plat/${plat.nom.replace(/ /g,'')}`} className='card' key={plat._id}>
+          <Card href={`/plat/${plat._id}`} className='card' key={plat._id}>
             <PlatImage alt="nom-plat-photo" src="../assets/burger.jpg"></PlatImage>
             Nom: <h3>{plat.nom}</h3>
             Prix : <h3>{plat.prix} €</h3>
