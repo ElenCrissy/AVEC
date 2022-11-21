@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-
 const PlatWrapper = styled.div`
   width:80%;
 `

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const FooterWrapper = styled.footer`
   width: 100%;
   display: flex;
-  align-item : center;
+  align-items: center;
   flex-direction : column;
   border-top: 2px solid #ccc;
   padding: 2rem 0 1.5rem;

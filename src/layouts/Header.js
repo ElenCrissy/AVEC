@@ -3,9 +3,9 @@ import logo from "../assets/logo.jpg"
 import Login from "../pages/Login"
 
 const HeaderWrapper = styled.div`
-    width :100%;
-    height : 150px;
-    background-color : black
+  width :100%;
+  height : 150px;
+  background-color : black
 `
 
 const Logo = styled.a`

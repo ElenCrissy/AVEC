@@ -1,5 +1,7 @@
 import styled from "styled-components"
-import usePlats from "../services/plats"
+// import usePlats from "../services/plats"
+import {getAliments} from "../api/apiAliments"
+import useState from 'react'
 
 const HomeWrapper = styled.div`
   width:80%;
@@ -27,12 +29,14 @@ const PlatImage = styled.img`
 `
 
 const Home = () => {
-    const plats = usePlats()
+    // const plats = usePlats()
+    const [ aliments, setAliments ] = useState([])
+    console.log(getAliments())
 
   return (
     <HomeWrapper className="App">
       <CardWrapper className='card-wrapper'>
-        {plats.map((plat) => (
+        {/* {plats.map((plat) => (
           <Card href={`/plat/${plat._id}`} className='card' key={plat._id}>
             <PlatImage alt="nom-plat-photo" src="../assets/burger.jpg"></PlatImage>
             Nom: <h3>{plat.nom}</h3>
@@ -41,7 +45,7 @@ const Home = () => {
             <p key={aliment._id}>{aliment.nom}</p>
             ))}
           </Card>
-        ))}
+        ))} */}
       </CardWrapper>
     </HomeWrapper>
   );
