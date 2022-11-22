@@ -8,10 +8,9 @@ const useAliments = (platId) => {
             const url = `http://localhost:3000/aliments`
             const resp = await fetch(url)
             const data = await resp.json()
-            setAliments(data)
+            setAliments(data) 
         }
         fetchData().catch(err => console.log(err))
-
     }, [platId])
 
     return aliments
