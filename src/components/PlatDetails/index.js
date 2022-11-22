@@ -8,7 +8,7 @@ const Home = () => {
     // const params = useParams();
 
     // récupère info du plat
-    // ouvre modale
+    // ouvre autre page
     // affiche bouton retour, photo, info, prix
   return (
     <PlatWrapper className="plat-wrapper">

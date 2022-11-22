@@ -1,7 +1,7 @@
 import styled from "styled-components"
 // import usePlats from "../services/plats"
 import {getAliments} from "../api/apiAliments"
-import useState from 'react'
+import {useState, useEffect} from 'react'
 
 const HomeWrapper = styled.div`
   width:80%;
@@ -31,7 +31,16 @@ const PlatImage = styled.img`
 const Home = () => {
     // const plats = usePlats()
     const [ aliments, setAliments ] = useState([])
-    console.log(getAliments())
+
+    async function fetchAliments() {
+      setAliments(await getAliments())
+    }
+
+    useEffect( () => {
+      fetchAliments()
+      console.log(aliments)
+  }, [])
+    
 
   return (
     <HomeWrapper className="App">
