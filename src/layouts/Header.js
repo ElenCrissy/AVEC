@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import logo from "../assets/logo.jpg"
-import Login from "../pages/Login"
+import Login from "../components/LoginHeaderButton"
 
 const HeaderWrapper = styled.div`
   width : 100%;
@@ -34,6 +34,16 @@ const NavWrapper = styled.nav`
 const NavElement = styled.a`
   display : flex;
   justifi-content : center;
+  font-weight: bold;
+  text-decoration: none
+  color: inherit;
+  &:visited{
+    color: black;
+    text-decoration: none
+  }
+  &:hover{
+    font-style: italic;
+  }
 `
 
 const Header = () => {
@@ -46,10 +56,10 @@ const Header = () => {
             <Login/>
           </LogoAndConnection>
           <NavWrapper>
-              <NavElement>Entrées</NavElement>
-              <NavElement>Plats</NavElement>
-              <NavElement>Desserts</NavElement>
-              <NavElement>Boissons</NavElement>
+              <NavElement href="/entrees">Entrées</NavElement>
+              <NavElement href="/plats">Plats</NavElement>
+              <NavElement href="/desserts">Desserts</NavElement>
+              <NavElement href="/">Boissons</NavElement>
           </NavWrapper>
       </HeaderWrapper>
   )

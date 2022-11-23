@@ -32,11 +32,11 @@ const LoginHeaderButton = () => {
     return(
         <LoginHeaderButtonWrapper>
             <a href="/login">
-                <FontAwesomeIcon icon={faRightToBracket} class="login-icon"/>
+                <FontAwesomeIcon icon={faRightToBracket} className="login-icon"/>
                 Se connecter
             </a>
             <a href="/signup">
-                <FontAwesomeIcon icon={faUserPlus} class="login-icon"/>
+                <FontAwesomeIcon icon={faUserPlus} className="login-icon"/>
                 S'inscrire
             </a>
         </LoginHeaderButtonWrapper>

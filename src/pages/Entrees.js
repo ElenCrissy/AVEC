@@ -3,7 +3,7 @@ import usePlats from "../services/plats"
 // import {getAliments} from "../api/apiAliments"
 // import {useState, useEffect} from 'react'
 
-const HomeWrapper = styled.div`
+const EntreesWrapper = styled.div`
   margin: 30px;
   justify-content: space-evenly;
 `
@@ -33,26 +33,33 @@ const PlatImage = styled.img`
     height : 100px;
 `
 
-const Home = () => {
+const Entrees = () => {
     const plats = usePlats()
+    console.log("hello")
+    let entrees = []
+    plats.map((plat) => {
+        if(plat.type === "entrée"){
+            entrees.push(plat)
+        }
+    })
   
   return (
-    <HomeWrapper className="App">
+    <EntreesWrapper className="App">
       <CardWrapper className='card-wrapper'>
-        {plats.map((plat) => (
-          <Card href={`/plat/${plat._id}`} className='card' key={plat._id}>
-            <PlatImage alt="nom-plat-photo" src={plat.image}></PlatImage>
-            <h3>{plat.nom}</h3>
-            <p>Prix : {plat.prix} €</p>
-            {plat.aliments.map((aliment) => (
+        {entrees.map((entree) => (
+          <Card href={`/plat/${entree._id}`} className='card' key={entree._id}>
+            <PlatImage alt="nom-plat-photo" src={entree.image}></PlatImage>
+            <h3>{entree.nom}</h3>
+            <p>Prix : {entree.prix} €</p>
+            {entree.aliments.map((aliment) => (
             <p key={aliment._id}>{aliment.nom}</p>
             ))}
           </Card>
         ))}
       </CardWrapper>
-    </HomeWrapper>
+    </EntreesWrapper>
   );
 }
 
-export default Home
+export default Entrees
 

@@ -3,7 +3,7 @@ import usePlats from "../services/plats"
 // import {getAliments} from "../api/apiAliments"
 // import {useState, useEffect} from 'react'
 
-const HomeWrapper = styled.div`
+const PlatsWrapper = styled.div`
   margin: 30px;
   justify-content: space-evenly;
 `
@@ -33,11 +33,17 @@ const PlatImage = styled.img`
     height : 100px;
 `
 
-const Home = () => {
-    const plats = usePlats()
+const Plats = () => {
+    const allPlats = usePlats()
+    let plats = []
+    allPlats.map((plat) =>{
+        if(plat.type === "plat"){
+            plats.push(plat)
+        }
+    })
   
   return (
-    <HomeWrapper className="App">
+    <PlatsWrapper className="App">
       <CardWrapper className='card-wrapper'>
         {plats.map((plat) => (
           <Card href={`/plat/${plat._id}`} className='card' key={plat._id}>
@@ -50,9 +56,9 @@ const Home = () => {
           </Card>
         ))}
       </CardWrapper>
-    </HomeWrapper>
+    </PlatsWrapper>
   );
 }
 
-export default Home
+export default Plats
 

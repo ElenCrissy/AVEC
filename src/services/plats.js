@@ -1,12 +1,5 @@
 import {useEffect, useState} from "react";
 
-// Exemple de params
-// /**
-//  * Returns data about daily activities bar chart
-//  * @param { Number } userId
-//  * @return { Array.<{calories: Number, day: String, kilogram: Number}> } activity
-//  */
-
 const usePlats = () => {
     const [plats, setPlats] = useState([])
 
